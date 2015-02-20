@@ -47,7 +47,7 @@ function teleinfo(port) {
 function decodeLigne(ligneBrute, trame, trameEvents) {
 	// Ligne du type "PAPP 00290 ," (Etiquette / Donnée / Checksum)
 	var elementsLigne = ligneBrute.split(' ');
-	if (elementsLigne.length === 3) {
+	if (elementsLigne.length >= 3) {
 		// Spec chk : somme des codes ASCII + ET logique 03Fh + ajout 20 en hexadécimal
 		// Résultat toujours un caractère ASCII imprimable allant de 20 à 5F en hexadécimal
 		// Checksum calculé sur etiquette+space+données => retirer les 2 derniers caractères
